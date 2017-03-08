@@ -60,13 +60,13 @@ umount /tmp/ossfs # root user
 fusermount -u /tmp/ossfs # non-root user
 ```
 
+
+#### 常用设置
 查看s3fs版本信息
 s3fs --version
 
 查看帮助信息
 s3fs -h 或 man s3fs
-
-#### 常用设置
 
 - 在linux系统中，[updatedb][updatedb]会定期地扫描文件系统，如果不想
   ossfs的挂载目录被扫描，可参考[FAQ][FAQ-updatedb]设置跳过挂载目录
