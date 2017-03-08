@@ -12,24 +12,37 @@ s3fs-easyinstall 为常见的linux发行版制作了安装包，方便您的安�
 
 选择对应的安装包下载安装，建议选择最新版本。
 
-- 对于CentOS6.5及以上，安装命令为：
 
+- 对于Ubuntu14，安装命令为：
 ```
-sudo wget
+wget https://github.com/hyperwd/s3fs-easyinstall/releases/download/v1.80/s3fs_1.80_ubuntu14.04_amd64.deb -O s3fs_1.80_ubuntu14.04_amd64.deb
+sudo apt-get update
+sudo apt-get install gdebi-core
+sudo gdebi s3fs_1.80_centos7.0_x86_64.rpm
+```
+
+- 对于CentOS7，安装命令为：
+```
+sudo yum remove fuse*
+wget https://github.com/hyperwd/s3fs-easyinstall/releases/download/v1.80/s3fs_1.80_centos7.0_x86_64.rpm -O s3fs_1.80_centos7.0_x86_64.rpm
+sudo yum localinstall s3fs_1.80_centos7.0_x86_64.rpm
+```
+
+- 对于CentOS6，安装命令为：
+```
+wget https://github.com/hyperwd/s3fs-easyinstall/releases/download/v1.80/s3fs_1.80_centos6.5_x86_64.rpm -O s3fs_1.80_centos6.5_x86_64.rpm
 sudo yum localinstall your_ossfs_package
 ```
 
 - 对于CentOS5，安装命令为：
-
 ```
-sudo wget
+wget https://github.com/hyperwd/s3fs-easyinstall/releases/download/v1.80/s3fs_1.80_centos5.11_x86_64.rpm -O s3fs_1.80_centos5.11_x86_64.rpm
 sudo yum localinstall your_ossfs_package --nogpgcheck
 ```
 
 ### 挂载示例
 
-获取AK,SK信息，将其存放在/etc/passwd-ossfs 文件中，
-注意这个文件的权限必须正确设置，建议设为640。或者将其存放在~/.passwd-s3fs文件中，权限建议600
+获取AK,SK信息，将其存放在/etc/passwd-ossfs 文件中，注意这个文件的权限必须正确设置，建议设为640。或者将其存放在~/.passwd-s3fs文件中，权限建议600
 
 假设我想要将`obs-411174` 这个桶挂载到云主机`/tmp/obs`目录下，AccessKeyId(AK)是`OBIOPI`,
 Secret Access Key(SK)是`rdh8s1`
@@ -60,13 +73,13 @@ umount /tmp/ossfs # root user
 fusermount -u /tmp/ossfs # non-root user
 ```
 
-
-#### 常用设置
 查看s3fs版本信息
 s3fs --version
 
 查看帮助信息
 s3fs -h 或 man s3fs
+
+#### 常用设置
 
 - 在linux系统中，[updatedb][updatedb]会定期地扫描文件系统，如果不想
   ossfs的挂载目录被扫描，可参考[FAQ][FAQ-updatedb]设置跳过挂载目录
