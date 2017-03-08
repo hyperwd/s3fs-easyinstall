@@ -78,14 +78,12 @@ fusermount -u /tmp/ossfs # non-root user
         
         bucket1:AK:SK
         bucket2:AK:SK
-- 默认挂载命令，赋予挂载文件夹（如/tmp/obs）root权限，allow_other参数可以开放其他用户访问,注意：allow_other是赋予挂载目录其他用户访问的权限，不是里面的文件！如果您要更改文件夹中的文件，请用chmod命令
-
-        
+- 默认挂载命令，赋予挂载文件夹（如/tmp/obs）root权限，allow_other参数可以开放其他用户访问，注意：allow_other是赋予挂载目录其他用户访问的权限，不是里面的文件！如果您要更改文件夹中的文件，请用chmod命令
+ 
         s3fs bucket_name your_mount_point -o url=http://obs.myhwclouds.com -o allow_other          
 - allow_other默认赋予挂载目录777权限，我想让挂载目录的权限为770，该怎么办？我想直接将挂载文件夹(如/tmp/obs)赋予普通用户，该怎么办？更多权限设置，请参考FAQ
 
 - fusermount -u your_ount_point卸载出错,fusermount: failed to unmount /your_mount_point: Device or resource busy
-
 
         fusermount -uz your_mount_point
       
