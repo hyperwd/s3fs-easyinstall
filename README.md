@@ -41,7 +41,7 @@ sudo yum localinstall s3fs_1.80_centos5.11_x86_64.rpm --nogpgcheck
 
 ### 挂载示例
 
-获取AK,SK信息，将其存放在/etc/passwd-ossfs 文件中，注意这个文件的权限必须正确设置，建议设为640。或者将其存放在~/.passwd-s3fs文件中，权限建议600
+获取AK,SK信息，将其存放在/etc/passwd-s3fs 文件中，注意这个文件的权限必须正确设置，建议设为640。或者将其存放在~/.passwd-s3fs文件中，权限建议600
 
 假设我想要将`obs-411174` 这个桶挂载到云主机`/tmp/obs`目录下，AccessKeyId(AK)是`OBIOPI`,
 Secret Access Key(SK)是`rdh8s1`
