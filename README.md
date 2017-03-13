@@ -17,7 +17,7 @@ s3fs-easyinstall 为常见的linux发行版制作了安装包，方便您的安�
 wget https://github.com/hyperwd/s3fs-easyinstall/releases/download/v1.80/s3fs_1.80_ubuntu14.04_amd64.deb -O s3fs_1.80_ubuntu14.04_amd64.deb
 sudo apt-get update
 sudo apt-get install gdebi-core
-sudo gdebi s3fs_1.80_centos7.0_x86_64.rpm
+sudo gdebi s3fs_1.80_ubuntu14.04_amd64.deb
 ```
 
 - 对于CentOS7，安装命令为：
