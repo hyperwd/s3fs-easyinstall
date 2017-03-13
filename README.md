@@ -95,7 +95,7 @@ fusermount -u /tmp/ossfs # non-root user
         s3fs -d -f bucket_name your_mount_point -o url=http://obs.myhwclouds.com > /tmp/s3fs.log 2>&1
 
 ### 常见问题
-FAQ
+[FAQ](https://github.com/hyperwd/s3fs-easyinstall/wiki/FAQ)
 
 ### 相关链接
 
