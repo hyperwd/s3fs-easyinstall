@@ -68,10 +68,10 @@ df -Th /tmp/obs #验证目录
 卸载桶:
 
 ```
-umount /tmp/ossfs # root user
-fusermount -u /tmp/ossfs # non-root user
+umount /tmp/obs # root user
+fusermount -u /tmp/obs # non-root user
 ```
-- 使用`ossfs --version`来查看当前版本，使用`ossfs -h`来查看可用的参数
+- 使用`s3fs --version`来查看当前版本，使用`s3fs -h`来查看可用的参数
 
 #### 常用设置
 - s3fs支持多组AK,SK的使用，即同时挂载多组OBS桶。编辑/etc/passwd-s3fs或~/.passwd-s3fs
@@ -90,7 +90,7 @@ fusermount -u /tmp/ossfs # non-root user
  
 #### 高级设置
 
-- 可以添加`-f -d`参数来让ossfs运行在前台并输出debug日志，重新挂载，打开debug，然后重复你出错的步骤，再次查看/tmp/s3fs.log,尝试理解分析错误，或者发给我
+- 可以添加`-f -d`参数来让s3fs运行在前台并输出debug日志，重新挂载，打开debug，然后重复你出错的步骤，再次查看/tmp/s3fs.log,尝试理解分析错误，或者发给我
       
         s3fs -d -f bucket_name your_mount_point -o url=http://obs.myhwclouds.com > /tmp/s3fs.log 2>&1
 
